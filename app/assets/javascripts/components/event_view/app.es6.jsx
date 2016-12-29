@@ -108,7 +108,7 @@ class App extends React.Component {
     return (
         <div className="row">
             <div className="card-panel main-panel col l12">
-            <h2 className="event-details-info"> {event.title} </h2>
+            <h5 className="event-details-info"> {event.title} </h5>
               <div className="map-container col l8">
                 <MapView
                   passUpPlaces={this.grabPlaces}

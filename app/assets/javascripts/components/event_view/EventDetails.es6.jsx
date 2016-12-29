@@ -15,21 +15,18 @@ class EventDetails extends React.Component {
   }
 
   render() {
-    console.log("these are the event details props", this.props)
-
     const { title, day, host_username, venue, venue_address, id } = this.props.details
     const { venueChoices } = this.props
     // const { venue } = this.props
     if (venue && venue != "") {
       return(
         <div>
-          <h2>Great! This event is set!</h2>
-          <h3>{title}</h3>
+          <h5>Great! This event is set for {title}</h5>
           <hr></hr>
-          <h5>Date: {day}</h5>
-          <h5>Host: {host_username}</h5>
-          <h5>Venue: {venue}</h5>
-          <h5>Address: {venue_address}</h5>
+          <h6>Date: {day}</h6>
+          <h6>Host: {host_username}</h6>
+          <h6>Venue: {venue}</h6>
+          <h6>Address: {venue_address}</h6>
           <div>
             <form action={"/events/"+id+"/reset"} method="post">
               <input type="hidden" name="_method" value="PUT" />

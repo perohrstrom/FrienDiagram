@@ -57,40 +57,41 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    console.log("these are the upcoming events", this.state.upComingEvents)
     return (
       <div className="my-panel card-panel main-panel">
-        <div id="first-container">
+        <div className="section">
           <Timeline
             timelineData={this.state.timelineData}
           />
-          <ul className="collapsible" data-collapsible="accordion">
-            <li>
-              <div className="collapsible-header">
-                <i className="material-icons">mail</i>Sent Invitations
-              </div>
-                <PendingInvites pendingEvents={this.state.pendingEvents}/>
-            </li>
-            <li>
-              <div className="collapsible-header">
-                <i className="material-icons">event</i>Pending Events
-              </div>
-              <AcceptInviteForm
-                addressStatus={this.state.addressStatus}
-                events={this.props.userProfile.open_invites}
-                addresses={this.state.addresses}
-              />
-            </li>
-            <li>
-              <div className="collapsible-header">
-                <i className="material-icons">place</i>Upcoming Events
-              </div>
-              <UpComingEvents userEvents={this.state.upComingEvents} />
-            </li>
+          <div>
+            <ul className="collapsible" data-collapsible="accordion">
+              <li>
+                <div className="collapsible-header">
+                  <i className="material-icons">mail</i>Sent Invitations
+                </div>
+                  <PendingInvites pendingEvents={this.state.pendingEvents}/>
+              </li>
+              <li>
+                <div className="collapsible-header">
+                  <i className="material-icons">event</i>Pending Events
+                </div>
+                <AcceptInviteForm
+                  addressStatus={this.state.addressStatus}
+                  events={this.props.userProfile.open_invites}
+                  addresses={this.state.addresses}
+                />
+              </li>
+              <li>
+                <div className="collapsible-header">
+                  <i className="material-icons">place</i>Upcoming Events
+                </div>
+                <UpComingEvents userEvents={this.state.upComingEvents} />
+              </li>
 
-          </ul>
+            </ul>
+          </div>
         </div>
-        <div id="second-container">
+        <div id="add_event" className="section scrollspy">
           <NewEventForm
             current_user={this.props.current_user}
             homeBases={this.props.homeBases}

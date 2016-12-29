@@ -5,14 +5,13 @@ class TimelineEvent extends React.Component {
 
   render() {
     const { title, venue, event_type, host } = this.props.event
+    console.log(title)
     return (
-      <div>
         <li>
-          <span> <strong>{ host.first_name }</strong> is hosting an event called "{ title }" and is going to { venue }.</span>
+          <span className="timeline"> <strong>{ host.first_name }</strong> is hosting <strong>{ title }</strong> at (<strong>{ venue }</strong>).</span>
 
           <hr/>
         </li>
-      </div>
     )
   }
 }
