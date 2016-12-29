@@ -6,16 +6,18 @@ Edwin Carbajal: @edwincarbajal,
 Neel Gupta: @neelgupta2,
 Logan Graves: @thomaslogangraves
 
-An event planning application which suggests venues located equidistance from two users' geolocations.
+A Rails-React web app which utilizes the Devise, Geolocator and Rails-react gems. Using the coordinates of two users, FrienDiagram will identify the midpoint and populate a Google Map component with local venues to choose from. Users can can schedule events and decide on a venue in seconds.
 
-clone link from Github.
 
-In command line, enter the git clone [Link].
+```
+git clone https://github.com/perohrstrom/FrienDiagram.git
+cd FrienDiagram
 
-cd FriendDiagram
+bundle install
+rails db:create
+rails db:migrate
+rails db:seed (if desired)
 
-db:create
-db:migrate
-db:seed
 rails s
-localhost:3000
+```
+open web browser and visit localhost:3000
