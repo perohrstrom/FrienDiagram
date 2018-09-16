@@ -4,55 +4,55 @@ class DiagramForm extends React.Component {
     this.state = {
       locA: "",
       locB: "",
-      type: null,
-    
+      type: "bar",
+      value: "coconut"   
     }
-    this.updateLocA = this.updateLocA.bind(this);
-    this.updateLocB = this.updateLocB.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.findResults = this.findResults.bind(this);
   }
 
   findResults(event) {
     event.preventDefault();
-    this.props.findResults(this.state.locA, this.state.locB);
-    
-
+    this.props.findResults(
+      this.state.locA, 
+      this.state.locB, 
+      this.state.type
+    );
   }
 
-  updateLocA(event) {
+  handleChange(event) {
     event.preventDefault();
-    this.setState({ locA: event.target.value });
+    this.setState({ [event.target.name]: event.target.value });
 
   }
 
-  updateLocB(event) {
-    event.preventDefault();
-    this.setState({ locB: event.target.value });
-
-  }
 
   render() {
-    const { locA, locB, type  } = this.state;
+    const { locA, locB, type } = this.state;
+
+    console.log(this.state)
     // console.log("I'm in the new event form render, here's the amount of friends", friends.length)
     return (
+      <div className='form_container'>
       <div className="row">
         <form className="col s12" onSubmit={this.findResults}>
-            <label htmlFor="Your Location">:</label><br/>
-          <input value={locA} onChange={this.updateLocA} type="text" name="locA" placeholder="Enter where you'll be" /><br/>
-
-            <label htmlFor="Your Friend's Location">:</label><br />
-          <input value={locB} onChange={this.updateLocB} type="text" name="locB" placeholder="Enter where your friend will be" /><br />
-
-           <label htmlFor="title">Type:</label><br/>
-           <select className="event_form" type="text" name="type" placeholder="Event Type">
-             <option value="bar">Bar</option>
-             <option value="cafe">Cafe</option>
-             <option value="restaurant">Restaurant</option>
-             <option value="museum">Museum</option>
-             <option value="park">Park</option>
-           </select>
-            <input type="submit" value="Create Event" className="waves-effect waves-light btn normal-btn" />
-          </form>
+          <br />
+          <input value={locA} onChange={this.handleChange} type="text" name="locA" placeholder="Enter where you'll be" /><br/>
+          <input value={locB} onChange={this.handleChange} type="text" name="locB" placeholder="Enter where your friend will be" /><br />
+          
+          <select name='type' defaultValue={type} onChange={this.handleChange} style={{display:"block"}}>
+            <option value="bar">Bar</option>
+            <option value="cafe">Cafe</option>
+            <option value="restaurant">Restaurant</option>
+            <option value="museum">Museum</option>
+            <option value="park">Park</option>
+          </select>
+          <br />
+          
+         
+          <input type="submit" value="Search for Places!" className="waves-effect waves-light btn normal-btn" />
+        </form>
+      </div>
       </div>
     )
   }

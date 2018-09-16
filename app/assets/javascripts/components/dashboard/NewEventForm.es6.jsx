@@ -16,7 +16,7 @@ class NewEventForm extends React.Component {
             <input type="text" name="event[title]" placeholder="Event Title" /><br/>
 
            <label htmlFor="title">Type:</label><br/>
-           <select className="event_form" type="text" name="event[event_type]" placeholder="Event Type">
+           <select type="text" name="event[event_type]" placeholder="Event Type">
              <option value="bar">Bar</option>
              <option value="cafe">Cafe</option>
              <option value="restaurant">Restaurant</option>

@@ -11,15 +11,13 @@ class Diagram extends React.Component {
     this.findResults = this.findResults.bind(this);
   }
 
-  findResults(event) {
-    event.preventDefault();
+  findResults(locA, locB, type) {
     results = []
     this.state.results = results
   }
 
   render() {
     const { locA, locB, type, results  } = this.state;
-    // console.log("I'm in the new event form render, here's the amount of friends", friends.length)
     return (
       <div className='diagram'>
         <DiagramForm findResults={this.findResults} />
