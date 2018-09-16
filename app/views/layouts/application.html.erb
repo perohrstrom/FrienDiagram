@@ -35,13 +35,11 @@
   </head>
 
   <body>
-    <%= react_component 'mySidenavmenu', current_user: current_user %>
-      <div class="container">
-        <div class="row">
-          <%= yield %>
-        </div>
-      </div>
-    </div>
+    <%= react_component 'header', current_user: current_user %>
+    <main>
+      <%= yield %>
+    </main>
+    <%= react_component 'footer', current_user: current_user %>
       <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
   </body>
