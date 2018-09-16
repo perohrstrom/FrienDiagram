@@ -15,7 +15,7 @@
 /* Tooltip text */
 .tooltip .tooltiptext {
   visibility: hidden;
-  /* width: 120px; */
+  width: 120px;
   background-color: black;
   color: #fff;
   text-align: center;
@@ -42,11 +42,15 @@ main {
   flex: 1 0 auto;
 }
 
-html {
+/* html {
   background: url("/pexels-photo-large.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+} */
+
+footer {
+  visibility: hidden;
 }
 

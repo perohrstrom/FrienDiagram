@@ -1,21 +1,24 @@
 class header extends React.Component {
   renderActiveLinks() {
       return(
-        <nav className='light-blue darken-4'>
-          <div className="nav-wrapper tooltip">
-            <ul className="right hide-on-med-and-down">
-              <li><a href="sass.html"><i className="material-icons">live_help</i>
-              <span class="tooltiptext">About</span></a></li>
+        <div className="navbar-fixed">
+          <nav className='light-blue darken-4'>
+            <div className="nav-wrapper ">
+              <a href="#" className="brand-logo">FrienDiagram</a>
+              <ul className="right hide-on-med-and-down">
+                <li><a href="sass.html"><i className="material-icons tooltip">live_help</i>
+                <span className="tooltiptext">About</span></a></li>
 
-              <li><a href="https://github.com/perohrstrom"><i className="material-icons">receipt</i>
-                <span class="tooltiptext">Github</span></a></li>
-              <li><a href="https://twitter.com/perlikethefruit"><i className="material-icons">message</i>
-                <span class="tooltiptext">Twitter</span></a></li>
-              <li><a href="mailto:per.k.ohrstrom@gmail.com"><i className="material-icons">email</i>
-                <span class="tooltiptext">Email</span></a></li>
-            </ul>
-          </div>
-        </nav>
+                <li><a href="https://github.com/perohrstrom"><i className="material-icons tooltip">receipt</i>
+                  <span className="tooltiptext">Github</span></a></li>
+                <li><a href="https://twitter.com/perlikethefruit"><i className="material-icons tooltip">message</i>
+                  <span className="tooltiptext">Twitter</span></a></li>
+                <li><a href="mailto:per.k.ohrstrom@gmail.com"><i className="material-icons tooltip">email</i>
+                  <span className="tooltiptext">Email</span></a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       )
     
   }
