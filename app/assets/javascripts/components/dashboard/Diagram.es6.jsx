@@ -21,6 +21,7 @@ class Diagram extends React.Component {
     return (
       <div className='diagram'>
         <DiagramForm findResults={this.findResults} />
+        <MapBoard results={results} locA={locA} locb={locB} type={type} />
       </div>
     )
   }
